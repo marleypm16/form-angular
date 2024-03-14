@@ -1,0 +1,120 @@
+.form{
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: hsl(231, 100%, 99%);
+    border-radius: 15px;
+    width: 90%;
+}
+
+.header{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    h2{
+        margin-bottom: 10px;
+        color:hsl(213, 96%, 18%);
+    }
+}
+
+.inputs{
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.type{
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    background-color: hsl(231, 100%, 99%);
+    border: 1px solid gray;
+    border-radius: 10px;
+    outline: none;
+}
+.check:checked{
+    color: purple;
+}
+.type:focus{
+    border: 1px solid purple;
+}
+.price-type{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.yearprice{
+    font-size: 11px;
+}
+.title-add-ons{
+    color: hsl(213, 96%, 18%);
+
+}
+.change-input{
+    -webkit-appearance: none;
+    position: relative;
+    width: 80px;
+    height: 40px;
+    border-radius: 50px;
+    outline: none;
+    background-color:hsl(213, 96%, 18%) ;
+    background-size: cover;
+}
+  
+
+
+.change-input::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 50px;
+    transition: all 1.5s ease-in-out;
+
+}
+
+.change-input:checked:before{
+    transform: translate(100%);
+    transition: all 0.7s ease-in-out;
+
+}
+.change-input:checked{
+    background-color: hsl(213, 96%, 18%);
+
+}
+
+
+.change{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.show{
+    display: block;
+}
+
+.notshow{
+    display: none;
+}

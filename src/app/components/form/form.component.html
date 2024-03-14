@@ -1,0 +1,38 @@
+<app-header pageActive="page1" pageActive2="disabled" pageActive3="disabled" pageActive4="disabled"></app-header>
+
+<form action="" (ngSubmit)="submit()" [formGroup]="profileForm" #formDir ='ngForm'>
+    <section class="header">
+        <h2>Personal info</h2>
+        <p>Please provide your name, email and <br>phone number</p>
+    </section>
+    <section class="inputs">
+        <label for="user">Name</label>
+        <input formControlName = "user" required="" type="text" name="user"  placeholder="Digite seu usuário" id="">
+        <div *ngIf="user.invalid && formDir.submitted">
+            <label [className]="errorMessage" *ngIf="user.errors?.['required']" for="user">User obrigatório</label>
+            <label [className]="errorMessage" *ngIf="user.errors?.['maxlength']" for="user">Usuário deve ter no maximo 15 caracteres</label>
+            <label [className]="errorMessage" *ngIf="user.errors?.['minlength']" for="user">Usuário deve ter no minimo 5 caracteres</label>
+        </div>
+
+        <label for="email">Email</label>
+        <input type="email" formControlName = "email" name="email" placeholder="Digite seu email">
+        <div *ngIf="email.invalid && formDir.submitted">
+
+            <label for="email" [className]="errorMessage" *ngIf="email.errors?.['required']">email obrigatorio </label>
+            <label for="email" [className]="errorMessage" *ngIf="email.errors?.['email']">Digite um email Válido</label>
+        </div>
+
+
+        <label for="senha">Phone Number</label>
+        <input type="number" formControlName = "phoneNumber" name="phoneNumber" placeholder="Digite seu número de telefone" id="">
+
+        <div *ngIf="formDir.submitted">
+
+            <label for="phoneNumber" [className]="errorMessage" *ngIf="phoneValidator() && phoneNumber.errors?.['minlength']">Digite um número de telefone Válido </label>
+        </div>
+
+
+    </section>
+    <app-footer text="Next Step" ></app-footer>
+</form>
+

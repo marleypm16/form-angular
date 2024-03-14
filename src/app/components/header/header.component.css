@@ -1,0 +1,37 @@
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em ;
+    gap: 15px;
+    padding: 3em;
+    height: 150px;
+    background-image: url('/assets/bg-sidebar-mobile.svg');
+    background-size: cover;
+    p{
+        border-radius: 25px;
+        font-size: 20px;
+        padding: 0.3em 0.5em;
+
+    }
+}
+.page1{
+    background-color: hsl(228, 100%, 84%)
+}
+.page2{
+    background-color: hsl(228, 100%, 84%)
+}
+.page3{
+    background-color: hsl(228, 100%, 84%)
+}
+.page4{
+    background-color: hsl(228, 100%, 84%)
+}
+
+.disabled{
+    border: 1px solid white;
+    color: white;
+    border-radius: 15px;
+}
+
+

@@ -1,0 +1,36 @@
+<app-header pageActive="disabled" pageActive2="disabled" pageActive3="disabled" pageActive4="page4"></app-header>
+
+<div class="form" >
+    <section class="header">
+        <h2>Finishing up</h2>
+        <p>Double-check everything looks OK<br> before confirming.</p>
+    </section>
+    <section class="inputs">
+        <div class="typePlan">
+            <div class="plan">
+                <p *ngIf="choice == 'month'" class="price">{{typePlan}} (Monthly)</p>
+                <p *ngIf="choice == 'year'" class="price">{{typePlan}} (Yearly)</p>
+                <a href="/form2" class="link">Change</a>
+            </div>
+            <p *ngIf="choice == 'month'" class="price">${{price}}/mo</p>   
+            <p *ngIf="choice == 'year'" class="price">${{price}}/yr</p>   
+        </div>
+        <div>
+            <ul class="list">
+                <li *ngFor="let extra of extras">
+                    <p class="name" *ngIf="choice == 'month'">{{extra.nome}}
+                        <span class="price">+${{extra.preco}}/mo</span></p>
+                    
+                    <p class="name" *ngIf="choice == 'year'">{{extra.nome}}
+                        <span class="price">+${{extra.preco}}/yr</span></p>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </section>
+    <p *ngIf="choice == 'month'" class="name totalfinal">Total (per month)  <span class="final-price"> +${{totalPrice}}/mo</span></p>
+    <p *ngIf="choice == 'year'" class="name totalfinal">Total (per year)  <span class="final-price">+${{totalPrice}}/yr</span></p>
+    <button (click)="submit()" >Confirm</button>
+</div>
+

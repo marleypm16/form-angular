@@ -1,0 +1,18 @@
+footer{
+    margin-top: 1.5em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    background-color: hsl(231, 100%, 99%);
+    padding: 10px 10px;
+
+    input{
+        padding: 10px;
+        color: white;
+        outline: none;
+        border: none;
+        border-radius: 8px;
+        background-color:hsl(213, 96%, 18%) ;
+    }
+}
+
