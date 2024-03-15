@@ -7,38 +7,48 @@
     </section>
     <section class="inputs">
         <button class="type"  type="button" (click)="addExtra({ nome: 'Online service' ,preco : priceExtraOnline},0)" >
-            <input type="checkbox" name="" [checked]="checkedOptions[0]" id="">
-
-            <div class="price-type">
-                <p class="title-add-ons">Online service</p>
-                <label class="yearprice"  for="user">Access to multiplayer games</label>
+            
+            <div class="check-extra">
+                <input type="checkbox" name="" [checked]="checkedOptions[0]" id="">
+                <div class="price-type">
+                    <p class="title-add-ons">Online service</p>
+                    <label class="yearprice"  for="user">Access to multiplayer games</label>
+                </div>
             </div>
+
             <label for="user">+${{priceExtraOnline}}/{{stringTypePlan}}</label>
         </button>
         <button class="type"  type="button"  (click)="addExtra({nome: 'Larger storage' ,preco : largerCustomiceService},1)" >
-            <input type="checkbox" name="" id="" [checked]="checkedOptions[1]">
+            <div class="check-extra">
+                <input type="checkbox" name="" id="" [checked]="checkedOptions[1]">
 
-            <div class="price-type">
+                <div class="price-type">
                 
-                <p class="title-add-ons">Larger storage</p>
+                    <p class="title-add-ons">Larger storage</p>
 
-                <label class="yearprice"  for="user">Extra 1TB of cloud save</label>
+                    <label class="yearprice"  for="user">Extra 1TB of cloud save</label>
+                </div>
             </div>
             <label for="email">+${{largerCustomiceService}}/{{stringTypePlan}}</label>
         </button>     
         <button class="type "   type="button" (click)="addExtra({nome: 'Customizable profile' ,preco : largerCustomiceService},2)">
-            <input type="checkbox" class="check" [checked]="checkedOptions[2]" id="">
-            <div class="price-type">
-                <p class="title-add-ons">Customizable profile</p>
-
-                <label class="yearprice" for="user">Custom theme on your profile</label>
-
+            <div class="check-extra">
+                <input type="checkbox"  [checked]="checkedOptions[2]" id="">
+                <div class="price-type">
+                    <p class="title-add-ons">Customizable profile</p>
+    
+                    <label class="yearprice" for="user">Custom theme on your profile</label>
+    
+                </div>
             </div>
             <label for="email">+${{largerCustomiceService}}/{{stringTypePlan}}</label>
 
         </button>
     </section>
-    <button (click)="submit()">Next Step</button>
-    <button (click)="goback()">Go back</button>
+    <section class="buttons">
+        <button class="back-button" (click)="goback()">Go back</button>
+        <button class="button-submit" (click)="submit()">Next Step</button>
+    </section>
+    
 </div>
 

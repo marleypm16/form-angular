@@ -12,7 +12,7 @@
                 <p>Arcade</p>
                 <label for="user">${{priceArcade}}/yr</label>
 
-                <label class="yearprice" *ngIf="yearMonth == 'year'" for="user">2 months free</label>
+                <span class="yearprice" *ngIf="yearMonth == 'year'" for="user">2 months free</span>
             </div>
         </button>
         <button class="type"  type="button"   (click)="returnIfButtonHasClicked('Advanced',priceAdvanced)">
@@ -21,7 +21,7 @@
                 <p>Advanced</p>
                 <label for="email">${{priceAdvanced}}/yr</label>
 
-                <label class="yearprice" *ngIf="yearMonth == 'year'" for="user">2 months free</label>
+                <span class="yearprice" *ngIf="yearMonth == 'year'" for="user">2 months free</span>
             </div>
         </button>     
         <button class="type"   type="button" (click)="returnIfButtonHasClicked('Pro',pricePro)">
@@ -30,7 +30,7 @@
                 <p>Pro</p>
                 <label for="email">${{pricePro}}/yr</label>
 
-                <label class="yearprice" *ngIf="yearMonth == 'year'" for="user">2 months free</label>
+                <span class="yearprice" *ngIf="yearMonth == 'year'" for="user">2 months free</span>
 
             </div>
         </button>
@@ -41,8 +41,10 @@
 
         </div>
     </section>
-    <app-footer text="Next Step" ></app-footer>
-    <button (click)="goback()">Go back</button>
+    <section class="buttons">
+        <button class="back-button" (click)="goback()">Go back</button>
+        <app-footer text="Next Step" ></app-footer>
+    </section>
     <label for="" [className]="showDiv">Please select one plan</label>
 </form>
 
