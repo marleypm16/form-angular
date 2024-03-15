@@ -41,12 +41,19 @@ export class Form3Component implements OnInit {
       this.stringTypePlan = 'mo'
     }
   }
-  addExtra(extra : Extra,index : number){
+  addExtra(extra: Extra, index: number) {
     this.checkedOptions[index] = !this.checkedOptions[index]; // Atualiza o botão selecionado
-    if(this.checkedOptions[index]){
-      this.extras.push(extra)
+    const extraIndex = this.extras.findIndex(e => e.nome === extra.nome); // Verifica se o extra já está na lista
+    if (extraIndex !== -1) {
+      // Se o extra já estiver na lista, remova-o
+      this.extras.splice(extraIndex, 1);
+    } else {
+      // Se o extra não estiver na lista, adicione-o
+      this.extras.push(extra);
     }
   }
+  
+  
   submit(){
     const plano : Plano = {
       typePlan : this.tipo,
