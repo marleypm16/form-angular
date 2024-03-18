@@ -24,11 +24,11 @@
 
 
         <label for="senha">Phone Number</label>
-        <input type="number" formControlName = "phoneNumber" name="phoneNumber" placeholder="Digite seu número de telefone" id="">
+        <input type="tel" formControlName = "phoneNumber" name="phoneNumber" placeholder="Digite seu número de telefone" id="">
 
-        <div *ngIf="formDir.submitted">
+        <div *ngIf=" phoneNumber.invalid &&formDir.submitted">
 
-            <label for="phoneNumber" [className]="errorMessage" *ngIf="phoneValidator() && phoneNumber.errors?.['minlength']">Digite um número de telefone Válido </label>
+            <label for="phoneNumber" [className]="errorMessage" *ngIf="phoneNumber.errors?.['required'] || phoneNumber.errors?.['invalidPhoneNumber'] ">Digite um número de telefone Válido </label>
         </div>
 
 
