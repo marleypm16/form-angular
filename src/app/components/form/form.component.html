@@ -7,7 +7,7 @@
     </section>
     <section class="inputs">
         <label for="user">Name</label>
-        <input formControlName = "user" required="" type="text" name="user"  placeholder="Digite seu usuário" id="">
+        <input formControlName = "userName" required type="text" name="user"  placeholder="Digite seu usuário" id="">
         <div *ngIf="user.invalid && formDir.submitted">
             <label [className]="errorMessage" *ngIf="user.errors?.['required']" for="user">User obrigatório</label>
             <label [className]="errorMessage" *ngIf="user.errors?.['maxlength']" for="user">Usuário deve ter no maximo 15 caracteres</label>
