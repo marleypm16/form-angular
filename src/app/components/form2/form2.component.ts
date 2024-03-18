@@ -65,13 +65,13 @@ export class Form2Component {
     }
 
     // send plan to localstorage
-    const plano : Plano = {
+    const plan : Plano = {
       typePlan : this.type,
       yearMonthChoice:this.yearMonth,
       price : this.price,
 
     }
-    localStorage.setItem('plano',JSON.stringify(plano))
+    localStorage.setItem('plan',JSON.stringify(plan))
 
     this.router.navigate(['form3'],{queryParams : {tipo : this.tipo,pagamesano : this.yearMonth,price : this.price}})
   }
