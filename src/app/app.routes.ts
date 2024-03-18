@@ -5,6 +5,7 @@ import { Page3Component } from './pages/page3/page3.component';
 import { Page4Component } from './pages/page4/page4.component';
 import { EndFormComponent } from './components/end-form/end-form.component';
 
+//site routes
 export const routes: Routes = [
     {path : '',component : Page1Component},
     {path: 'form2',component: Page2Component},
