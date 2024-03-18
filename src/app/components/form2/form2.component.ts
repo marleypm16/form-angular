@@ -73,7 +73,7 @@ export class Form2Component {
     }
     localStorage.setItem('plan',JSON.stringify(plan))
 
-    this.router.navigate(['form3'],{queryParams : {type : this.type,pagamesano : this.yearMonth,price : this.price}})
+    this.router.navigate(['form3'],{queryParams : {type : this.type,payYearlyOrMonthly : this.yearMonth,price : this.price}})
   }
 
   goback(){
