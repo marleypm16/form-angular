@@ -8,6 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-  @Input('page') page : string = ''
   @Input ('text') text : string = ''
 }
