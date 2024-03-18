@@ -15,14 +15,12 @@
             <p *ngIf="choice == 'month'" class="price">${{price}}/mo</p>   
             <p *ngIf="choice == 'year'" class="price">${{price}}/yr</p>   
         </div>
-        <div>
+        <div class="list-div">
             <ul class="list">
-                <li *ngFor="let extra of extras">
-                    <p class="name" *ngIf="choice == 'month'">{{extra.nome}}
-                        <span class="price">+${{extra.preco}}/mo</span></p>
-                    
-                    <p class="name" *ngIf="choice == 'year'">{{extra.nome}}
-                        <span class="price">+${{extra.preco}}/yr</span></p>
+                <li class="item-list" *ngFor="let extra of extras">
+                        <p class="name" >{{extra.nome}}</p>
+                        <span class="price" *ngIf="choice == 'month'">+${{extra.preco}}/mo</span>
+                        <span class="price" *ngIf="choice == 'year'">+${{extra.preco}}/yr</span>
                 </li>
                 
             </ul>
