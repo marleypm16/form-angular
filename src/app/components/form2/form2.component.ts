@@ -18,7 +18,7 @@ export class Form2Component {
   pageActive : string = ''
   yearMonth : yearMonth = 'month'
   price! :number
-  tipo!: string;
+  type!: string;
   buttonClicked : boolean = false
   showDiv : string = 'notshow'
   @Input() priceArcade : number = 9
@@ -55,7 +55,7 @@ export class Form2Component {
   // get which plan is selected and return if button has clicked
   returnIfButtonHasClicked(plan : string,price : number){
     this.buttonClicked = true
-    this.tipo = plan
+    this.type = plan
     this.price = price
   }
   submit(){
@@ -64,9 +64,9 @@ export class Form2Component {
       return
     }
 
-    //
+    // send plan to localstorage
     const plano : Plano = {
-      typePlan : this.tipo,
+      typePlan : this.type,
       yearMonthChoice:this.yearMonth,
       price : this.price,
 
