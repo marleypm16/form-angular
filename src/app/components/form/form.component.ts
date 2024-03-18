@@ -17,7 +17,6 @@ type showError = 'show' | 'notShow';
 })
 export class FormComponent implements OnInit {
   usuario!: User;
-
   profileForm!: FormGroup;
   errorMessage: showError = 'notShow';
   pageActive: string = '';
@@ -25,12 +24,14 @@ export class FormComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    const usuarioString = localStorage.getItem('user');
+    const userString = localStorage.getItem('user');
+    //Verify if userString exists
     if (usuarioString) {
       this.usuario = JSON.parse(usuarioString) as User;
     } else {
       this.usuario = { name: '', email: '', phoneNumber: '' };
     }
+    //FormGroup Creation
     this.profileForm = new FormGroup({
       user: new FormControl(this.usuario.name, [Validators.required, Validators.maxLength(15), Validators.minLength(5)]),
       email: new FormControl(this.usuario.email, [Validators.email, Validators.required]),
@@ -38,6 +39,7 @@ export class FormComponent implements OnInit {
     });
   }
 
+  //get values
   get user() {
     return this.profileForm.get('user')!;
   }
@@ -49,10 +51,13 @@ export class FormComponent implements OnInit {
   }
 
   submit() {
+    //verify if form is valid
     if (this.profileForm.invalid) {
       this.errorMessage = 'show';
       return;
     }
+
+    //send user to local storage
     const user: User = {
       name: this.user.value,
       email: this.email.value,
@@ -62,6 +67,7 @@ export class FormComponent implements OnInit {
     this.router.navigate(['form2']);
   }
 
+  //validate if phonenumber has 11 characteres and only numbers
   phoneNumberValidator(control: FormControl): { [s: string]: boolean } | null {
     const phoneNumberPattern = /^[0-9]{11}$/;
     if (!phoneNumberPattern.test(control.value)) {
