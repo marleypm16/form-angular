@@ -14,7 +14,7 @@ import { Extra, Plano } from '../../plano';
 })
 export class Form3Component implements OnInit {
   buttonClicked : boolean = false
-  tipo! : string;
+  type! : string;
   pagapormesouano! : string;
   price! : number
   showDiv : string = 'notshow'
@@ -22,13 +22,13 @@ export class Form3Component implements OnInit {
   checkedOptions: boolean[] = [false, false, false]; // Array para controlar cada botão  
   @Input() stringTypePlan! : string
   @Input() priceExtraOnline : number = 1
-  @Input() largerCustomiceService : number = 2
+  @Input() largerStorageandCustomiceProfileService : number = 2
 
   constructor(private router:Router,private route : ActivatedRoute){ }
 
   ngOnInit(){
     this.route.queryParams.subscribe(params =>{
-      this.tipo = params['tipo'];
+      this.type = params['type'];
       this.pagapormesouano = params['pagamesano'];
       this.price = params['price']
     })
@@ -55,12 +55,6 @@ export class Form3Component implements OnInit {
   
   
   submit(){
-    const plano : Plano = {
-      typePlan : this.tipo,
-      yearMonthChoice:this.pagapormesouano,
-      price : this.price,
-    }
-    localStorage.setItem('plano',JSON.stringify(plano))
     localStorage.setItem('extra',JSON.stringify(this.extras))
     this.router.navigate(['form4'])
   }
