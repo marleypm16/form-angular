@@ -33,8 +33,8 @@ export class Form2Component {
       this.planForm = new FormGroup({ })
     }
 
- 
-
+   
+  // update prices
   changePlan(){
     if(this.yearMonth == 'month'){
       this.yearMonth = 'year'
@@ -52,6 +52,7 @@ export class Form2Component {
     }
 
   }
+  // get which plan is selected and return if button has clicked
   returnIfButtonHasClicked(plan : string,price : number){
     this.buttonClicked = true
     this.tipo = plan
@@ -63,6 +64,7 @@ export class Form2Component {
       return
     }
 
+    //
     const plano : Plano = {
       typePlan : this.tipo,
       yearMonthChoice:this.yearMonth,
