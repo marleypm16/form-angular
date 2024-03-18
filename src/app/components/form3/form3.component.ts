@@ -29,7 +29,7 @@ export class Form3Component implements OnInit {
   ngOnInit(){
     this.route.queryParams.subscribe(params =>{
       this.type = params['type'];
-      this.pagapormesouano = params['pagamesano'];
+      this.payMonthlyOrYearly = params['payYealyOrMonthly'];
       this.price = params['price']
     })
     if(this.pagapormesouano == 'year'){
