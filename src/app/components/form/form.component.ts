@@ -16,7 +16,7 @@ type showError = 'show' | 'notShow';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  usuario!: User;
+  user!: User;
   profileForm!: FormGroup;
   errorMessage: showError = 'notShow';
   pageActive: string = '';
@@ -26,22 +26,22 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
     const userString = localStorage.getItem('user');
     //Verify if userString exists
-    if (usuarioString) {
-      this.usuario = JSON.parse(usuarioString) as User;
+    if (userString) {
+      this.user = JSON.parse(userString) as User;
     } else {
-      this.usuario = { name: '', email: '', phoneNumber: '' };
+      this.user = { userName: '', email: '', phoneNumber: '' };
     }
     //FormGroup Creation
     this.profileForm = new FormGroup({
-      user: new FormControl(this.usuario.name, [Validators.required, Validators.maxLength(15), Validators.minLength(5)]),
-      email: new FormControl(this.usuario.email, [Validators.email, Validators.required]),
-      phoneNumber: new FormControl(this.usuario.phoneNumber, [Validators.required, this.phoneNumberValidator])
+      userName: new FormControl(this.user.name, [Validators.required, Validators.maxLength(15), Validators.minLength(5)]),
+      email: new FormControl(this.user.email, [Validators.email, Validators.required]),
+      phoneNumber: new FormControl(this.user.phoneNumber, [Validators.required, this.phoneNumberValidator])
     });
   }
 
   //get values
-  get user() {
-    return this.profileForm.get('user')!;
+  get userName() {
+    return this.profileForm.get('userName')!;
   }
   get email() {
     return this.profileForm.get('email')!;
@@ -59,7 +59,7 @@ export class FormComponent implements OnInit {
 
     //send user to local storage
     const user: User = {
-      name: this.user.value,
+      name: this.userName.value,
       email: this.email.value,
       phoneNumber: this.phoneNumber.value
     };
