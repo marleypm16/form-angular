@@ -7,7 +7,7 @@
     </section>
     <section class="inputs">
         <label for="user">Name</label>
-        <input formControlName = "userName" required type="text" name="user"  placeholder="Digite seu usuário" id="">
+        <input formControlName = "userName" required type="text" name="user"  placeholder="enter your username" id="">
         <div *ngIf="userName.invalid && formDir.submitted">
             <label [className]="errorMessage" *ngIf="userName.errors?.['required']" for="user">User obrigatório</label>
             <label [className]="errorMessage" *ngIf="userName.errors?.['maxlength']" for="user">Usuário deve ter no maximo 15 caracteres</label>
@@ -15,7 +15,7 @@
         </div>
 
         <label for="email">Email</label>
-        <input type="email" formControlName = "email" name="email" placeholder="Digite seu email">
+        <input type="email" formControlName = "email" name="email" placeholder="enter your email">
         <div *ngIf="email.invalid && formDir.submitted">
 
             <label for="email" [className]="errorMessage" *ngIf="email.errors?.['required']">email obrigatorio </label>
@@ -24,7 +24,7 @@
 
 
         <label for="senha">Phone Number</label>
-        <input type="tel" formControlName = "phoneNumber" name="phoneNumber" placeholder="Digite seu número de telefone" id="">
+        <input type="tel" formControlName = "phoneNumber" name="phoneNumber" placeholder="enter your phone number" id="">
 
         <div *ngIf=" phoneNumber.invalid &&formDir.submitted">
 
