@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HeaderComponent } from '../header/header.component';
-import { FooterComponent } from '../footer/footer.component';
+import { FooterComponent } from '../footer/buttonSubmit.component';
 import { Router } from '@angular/router';
 import { User } from '../../user';
 
@@ -33,13 +33,13 @@ export class FormComponent implements OnInit {
     }
     //FormGroup Creation
     this.profileForm = new FormGroup({
-      userName: new FormControl(this.user.name, [Validators.required, Validators.maxLength(15), Validators.minLength(5)]),
+      userName: new FormControl(this.user.userName, [Validators.required, Validators.maxLength(15), Validators.minLength(5)]),
       email: new FormControl(this.user.email, [Validators.email, Validators.required]),
       phoneNumber: new FormControl(this.user.phoneNumber, [Validators.required, this.phoneNumberValidator])
     });
   }
 
-  //get values
+  //get values of inputs
   get userName() {
     return this.profileForm.get('userName')!;
   }
@@ -57,9 +57,9 @@ export class FormComponent implements OnInit {
       return;
     }
 
-    //send user to local storage
+    //store user in localstorage
     const user: User = {
-      name: this.userName.value,
+      userName: this.userName.value,
       email: this.email.value,
       phoneNumber: this.phoneNumber.value
     };
@@ -67,7 +67,7 @@ export class FormComponent implements OnInit {
     this.router.navigate(['form2']);
   }
 
-  //validate if phonenumber has 11 characteres and only numbers
+  //validates if the phonenumber has 11 characteres and only numbers
   phoneNumberValidator(control: FormControl): { [s: string]: boolean } | null {
     const phoneNumberPattern = /^[0-9]{11}$/;
     if (!phoneNumberPattern.test(control.value)) {

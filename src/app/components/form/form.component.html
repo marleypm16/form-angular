@@ -8,10 +8,10 @@
     <section class="inputs">
         <label for="user">Name</label>
         <input formControlName = "userName" required type="text" name="user"  placeholder="Digite seu usuário" id="">
-        <div *ngIf="user.invalid && formDir.submitted">
-            <label [className]="errorMessage" *ngIf="user.errors?.['required']" for="user">User obrigatório</label>
-            <label [className]="errorMessage" *ngIf="user.errors?.['maxlength']" for="user">Usuário deve ter no maximo 15 caracteres</label>
-            <label [className]="errorMessage" *ngIf="user.errors?.['minlength']" for="user">Usuário deve ter no minimo 5 caracteres</label>
+        <div *ngIf="userName.invalid && formDir.submitted">
+            <label [className]="errorMessage" *ngIf="userName.errors?.['required']" for="user">User obrigatório</label>
+            <label [className]="errorMessage" *ngIf="userName.errors?.['maxlength']" for="user">Usuário deve ter no maximo 15 caracteres</label>
+            <label [className]="errorMessage" *ngIf="userName.errors?.['minlength']" for="user">Usuário deve ter no minimo 5 caracteres</label>
         </div>
 
         <label for="email">Email</label>

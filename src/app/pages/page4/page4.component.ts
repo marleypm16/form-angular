@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { Form4Component } from '../../components/form4/form4.component';
+import {  Review } from '../../components/form4/review.component';
 
 @Component({
   selector: 'app-page4',
   standalone: true,
-  imports: [Form4Component],
+  imports: [Review],
   templateUrl: './page4.component.html',
   styleUrl: './page4.component.css'
 })

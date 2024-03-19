@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { Form3Component } from '../../components/form3/form3.component';
+import { selectExtrasForm } from '../../components/form3/selectExtrasForm.component';
 
 @Component({
   selector: 'app-page3',
   standalone: true,
-  imports: [Form3Component],
+  imports: [selectExtrasForm],
   templateUrl: './page3.component.html',
   styleUrl: './page3.component.css'
 })

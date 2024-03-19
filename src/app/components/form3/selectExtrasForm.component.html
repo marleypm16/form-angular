@@ -1,0 +1,53 @@
+<app-header pageActive="disabled" pageActive2="disabled" pageActive3="page3" pageActive4="disabled"></app-header>
+
+<form class="form" >
+    <section class="header">
+        <h2>Pick add-ons</h2>
+        <p>Add-ons help enhance your gaming <br> experience.</p>
+    </section>
+    <section class="inputs">
+        <button class="type"  type="button" (click)="addExtra({ nome: 'Online service' ,preco : priceExtraOnline},0)" >
+            <div class="check-extra">
+                <input type="checkbox" name="" [checked]="checkedOptions[0]" id="">
+                <div class="price-type">
+                    <p class="title-add-ons">Online service</p>
+                    <label class="yearprice"  for="user">Access to multiplayer games</label>
+                </div>
+            </div>
+
+            <span>+${{priceExtraOnline}}/{{stringTypePlan}}</span>
+        </button>
+        <button class="type"  type="button"  (click)="addExtra({nome: 'Larger storage' ,preco : pricelargerStorageAndCustomiceProfileService},1)" >
+            <div class="check-extra">
+                <input type="checkbox" name="" id="" [checked]="checkedOptions[1]">
+
+                <div class="price-type">
+                
+                    <p class="title-add-ons">Larger storage</p>
+
+                    <label class="yearprice"  for="user">Extra 1TB of cloud save</label>
+                </div>
+            </div>
+            <span>+${{pricelargerStorageAndCustomiceProfileService}}/{{stringTypePlan}}</span>
+        </button>     
+        <button class="type "   type="button" (click)="addExtra({nome: 'Customizable profile' ,preco : pricelargerStorageAndCustomiceProfileService},2)">
+            <div class="check-extra">
+                <input type="checkbox"  [checked]="checkedOptions[2]" id="">
+                <div class="price-type">
+                    <p class="title-add-ons">Customizable profile</p>
+    
+                    <label class="yearprice" for="user">Custom theme on your profile</label>
+    
+                </div>
+            </div>
+            <span>+${{pricelargerStorageAndCustomiceProfileService}}/{{stringTypePlan}}</span>
+
+        </button>
+    </section>
+    <section class="buttons">
+        <button class="back-button" (click)="goback()">Go back</button>
+        <app-footer (click)="submit()" text="Next Step"></app-footer>
+    </section>
+    
+</form>
+
