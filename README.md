@@ -1,27 +1,76 @@
-# Form
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+# Multi-step form
 
-## Development server
+This project aims to create a multistep form. Guides users through various data entry steps. Inspired by an advanced level challenge found on the Frontend Mentor website.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Technologies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The technologies used in this project were :
+- Angular
+- TypeScript
+- Html 5
+- Css 3
+## Funcionalidades
 
-## Build
+### First page
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+On the first page the user enters their username, email and telephone number. This data is stored in local storage in case the user wishes to return to the first screen and change the data!
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+#### Business rules :
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- username cannot be longer than 15 and less than 5 characters
 
-## Further help
+- email: it must be a valid email
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- phone number: cannot have letters and must contain 11 numbers.
+
+
+
+### Second page
+
+User chooses the plan that interests them most and can change between the monthly or annual price
+
+#### Business rules :
+
+- user must choose at least one plan
+
+The plan is stored in local storage
+### Third page
+
+User receives options for extras to add to their plan
+
+The extras are stored in localstorage
+
+### Fourth page
+
+A review of user choices. The user can change their plan choices by pressing the "change" button
+
+When confirming your choices, the data is deleted.
+
+Note: application does not have a back-end
+
+
+## Running the project
+
+Clone the project to your computer
+```bash
+  git clone https://github.com/marleypm16/form-angular.git
+```
+
+Enter the project directory
+```bash
+  cd my-project
+```
+
+Install dependencies
+```bash
+  npm install
+```
+
+Start server
+```bash
+  npm start
+```
